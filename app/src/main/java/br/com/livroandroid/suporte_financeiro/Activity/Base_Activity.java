@@ -1,8 +1,10 @@
-package br.com.livroandroid.suporte_financeiro;
+package br.com.livroandroid.suporte_financeiro.Activity;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,16 +15,32 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class Base_Activity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+import br.com.livroandroid.suporte_financeiro.Fragments.ContatoFinancas;
+import br.com.livroandroid.suporte_financeiro.Fragments.FinancasFragment;
+import br.com.livroandroid.suporte_financeiro.R;
+
+public class Base_Activity extends AppCompatActivity {
+
+    protected Toolbar toolbar;
+    protected DrawerLayout drawer;
+    protected NavigationView navigationView;
+    protected FloatingActionButton fab;
+    protected ActionBarDrawerToggle toggle;
+
+    protected  void setToolbar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+        setToolbar();
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,14 +50,35 @@ public class Base_Activity extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+    }
+
+    protected void setUpDrawer() {
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(
+            new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+
+                if (id == R.id.frag1) {
+                    replaFragment(new ContatoFinancas());
+                } else if (id == R.id.frag2) {
+                    replaFragment(new ContatoFinancas());
+                } else if (id == R.id.frag3) {
+                    replaFragment(new ContatoFinancas());
+                } else if (id == R.id.frag4) {
+                    replaFragment(new FinancasFragment());
+                }
+                drawer.closeDrawer(GravityCompat.START);
+                return true;
+            }
+        });
     }
 
     @Override
@@ -74,28 +113,7 @@ public class Base_Activity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+    protected void replaFragment(Fragment frag) {
+        getSupportFragmentManager().beginTransaction().replace(R.id.container,frag,"TAG").commit();
     }
 }
