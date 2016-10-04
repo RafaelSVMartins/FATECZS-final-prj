@@ -9,13 +9,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="ListaFinancas">Lista de finanças</string>
     <string name="Contato">Contato finanças</string>
-        <string name="user">Rafael Martins</string>
-        <string name="email">"rafaelviniciusdasilvamartins@gmail.com"</string>
+    <string name="user">Rafael Martins</string>
+    <string name="email">"rafaelviniciusdasilvamartins@gmail.com"</string>
 
-        <string name="action_about">Sobre</string>
+    <string name="action_about">Sobre</string>
 
-        <!-- TODO: Remove or change this placeholder text -->
-        <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="about_dialog_text">
        <![CDATA[
 <b>Aplicativo dos Carros 2015</b><br>
@@ -24,13 +24,16 @@ Versao %s<br><br>
 <a href="https://plus.google.com/+RicardoLecheta">https://plus.google.com/+RicardoLecheta</a>
 	]]>
     </string>
-        <string name="todos">todos</string>
-        <string name="classicos">clássicos</string>
-        <string name="esportivos">esportivos</string>
-        <string name="luxo">luxo</string>
-        <string name="about_dialog_title">Carros Esportes</string>
-        <string name="ok">OK</string>
-        <string name="ListaCarros">Lista Carros</string>
-        <string name="SiteLivro">Site Livro</string>
+    <string name="todos">todos</string>
+    <string name="classicos">clássicos</string>
+    <string name="esportivos">esportivos</string>
+    <string name="luxo">luxo</string>
+    <string name="Frag1">Fragment1</string>
+    <string name="Frag2">Fragment2</string>
+    <string name="Frag3">Fragment3</string>
+    <string name="about_dialog_title">Carros Esportes</string>
+    <string name="ok">OK</string>
+    <string name="ListaCarros">Lista Carros</string>
+    <string name="SiteLivro">Site Livro</string>
 
 </resources>

@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import br.com.livroandroid.suporte_financeiro.Fragments.AboutDialog;
+import br.com.livroandroid.suporte_financeiro.Fragments.FinancasFragment;
 import br.com.livroandroid.suporte_financeiro.R;
 
 public class MainActivity extends Base_Activity {
@@ -15,6 +16,7 @@ public class MainActivity extends Base_Activity {
         super.onCreate(savedInstanceState);
         setToolbar();
         setUpDrawer();
+        replaFragment(new FinancasFragment());
     }
 
     @Override

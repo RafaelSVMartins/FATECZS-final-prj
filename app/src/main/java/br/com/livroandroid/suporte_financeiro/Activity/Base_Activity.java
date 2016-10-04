@@ -17,6 +17,7 @@ import android.view.MenuItem;
 
 import br.com.livroandroid.suporte_financeiro.Fragments.ContatoFinancas;
 import br.com.livroandroid.suporte_financeiro.Fragments.FinancasFragment;
+import br.com.livroandroid.suporte_financeiro.Fragments.FinancasTabsFragments;
 import br.com.livroandroid.suporte_financeiro.R;
 
 public class Base_Activity extends AppCompatActivity {
@@ -67,7 +68,7 @@ public class Base_Activity extends AppCompatActivity {
                 int id = item.getItemId();
 
                 if (id == R.id.frag1) {
-                    replaFragment(new ContatoFinancas());
+                    replaFragment(new FinancasTabsFragments());
                 } else if (id == R.id.frag2) {
                     replaFragment(new ContatoFinancas());
                 } else if (id == R.id.frag3) {
