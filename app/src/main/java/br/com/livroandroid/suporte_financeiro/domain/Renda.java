@@ -47,4 +47,22 @@ public class Renda {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Renda renda = (Renda) o;
+
+        if (!nomeRenda.equals(renda.nomeRenda)) return false;
+        return valorRenda.equals(renda.valorRenda);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = nomeRenda.hashCode();
+        result = 31 * result + valorRenda.hashCode();
+        return result;
+    }
 }

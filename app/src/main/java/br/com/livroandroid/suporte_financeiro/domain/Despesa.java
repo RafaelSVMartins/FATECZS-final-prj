@@ -58,4 +58,25 @@ public class Despesa {
                 ", DataVencimento=" + DataVencimento +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Despesa despesa = (Despesa) o;
+
+        if (!nomeDespesa.equals(despesa.nomeDespesa)) return false;
+        if (!valorDespesa.equals(despesa.valorDespesa)) return false;
+        return DataVencimento.equals(despesa.DataVencimento);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = nomeDespesa.hashCode();
+        result = 31 * result + valorDespesa.hashCode();
+        result = 31 * result + DataVencimento.hashCode();
+        return result;
+    }
 }

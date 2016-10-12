@@ -17,6 +17,7 @@ public class MainActivity extends Base_Activity {
         setToolbar();
         setUpDrawer();
         replaFragment(new FinancasFragment());
+
     }
 
     @Override

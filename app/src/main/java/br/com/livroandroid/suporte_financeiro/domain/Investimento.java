@@ -45,4 +45,23 @@ public class Investimento {
                 ", valorInvestimento=" + valorInvestimento +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Investimento that = (Investimento) o;
+
+        if (!nomeInvestimento.equals(that.nomeInvestimento)) return false;
+        return valorInvestimento.equals(that.valorInvestimento);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = nomeInvestimento.hashCode();
+        result = 31 * result + valorInvestimento.hashCode();
+        return result;
+    }
 }
