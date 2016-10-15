@@ -1,6 +1,9 @@
 package br.com.livroandroid.suporte_financeiro.domain;
 
+import android.os.Parcelable;
+
 import org.parceler.Parcel;
+import org.parceler.ParcelConstructor;
 
 import java.math.BigDecimal;
 import java.util.Calendar;
@@ -9,22 +12,12 @@ import java.util.Calendar;
  * Created by Rrafael on 09/10/2016.
  */
 
-@Parcel
-public class Despesa {
+public class Despesa implements Parcelable {
 
     private String nomeDespesa;
     private BigDecimal valorDespesa;
     private Calendar DataVencimento;
 
-    public Despesa() {
-
-    }
-
-    public Despesa(String nomeDespesa, BigDecimal valorDespesa, Calendar dataVencimento) {
-        this.nomeDespesa = nomeDespesa;
-        this.valorDespesa = valorDespesa;
-        DataVencimento = dataVencimento;
-    }
 
     public String getNomeDespesa() {
         return nomeDespesa;
@@ -79,4 +72,37 @@ public class Despesa {
         result = 31 * result + DataVencimento.hashCode();
         return result;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(android.os.Parcel dest, int flags) {
+        dest.writeString(this.nomeDespesa);
+        dest.writeSerializable(this.valorDespesa);
+        dest.writeSerializable(this.DataVencimento);
+    }
+
+    public Despesa() {
+    }
+
+    protected Despesa(android.os.Parcel in) {
+        this.nomeDespesa = in.readString();
+        this.valorDespesa = (BigDecimal) in.readSerializable();
+        this.DataVencimento = (Calendar) in.readSerializable();
+    }
+
+    public static final Parcelable.Creator<Despesa> CREATOR = new Parcelable.Creator<Despesa>() {
+        @Override
+        public Despesa createFromParcel(android.os.Parcel source) {
+            return new Despesa(source);
+        }
+
+        @Override
+        public Despesa[] newArray(int size) {
+            return new Despesa[size];
+        }
+    };
 }

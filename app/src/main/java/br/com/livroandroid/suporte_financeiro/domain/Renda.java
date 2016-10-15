@@ -1,6 +1,9 @@
 package br.com.livroandroid.suporte_financeiro.domain;
 
+import android.os.Parcelable;
+
 import org.parceler.Parcel;
+import org.parceler.ParcelConstructor;
 
 import java.math.BigDecimal;
 
@@ -8,20 +11,10 @@ import java.math.BigDecimal;
  * Created by Rrafael on 09/10/2016.
  */
 
-@Parcel
-public class Renda {
+public class Renda implements Parcelable {
 
     private String nomeRenda;
     private BigDecimal valorRenda;
-
-    public Renda() {
-
-    }
-
-    public Renda(String nomeRenda, BigDecimal valorRenda) {
-        this.nomeRenda = nomeRenda;
-        this.valorRenda = valorRenda;
-    }
 
     public String getNomeRenda() {
         return nomeRenda;
@@ -65,4 +58,35 @@ public class Renda {
         result = 31 * result + valorRenda.hashCode();
         return result;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(android.os.Parcel dest, int flags) {
+        dest.writeString(this.nomeRenda);
+        dest.writeSerializable(this.valorRenda);
+    }
+
+    public Renda() {
+    }
+
+    protected Renda(android.os.Parcel in) {
+        this.nomeRenda = in.readString();
+        this.valorRenda = (BigDecimal) in.readSerializable();
+    }
+
+    public static final Parcelable.Creator<Renda> CREATOR = new Parcelable.Creator<Renda>() {
+        @Override
+        public Renda createFromParcel(android.os.Parcel source) {
+            return new Renda(source);
+        }
+
+        @Override
+        public Renda[] newArray(int size) {
+            return new Renda[size];
+        }
+    };
 }

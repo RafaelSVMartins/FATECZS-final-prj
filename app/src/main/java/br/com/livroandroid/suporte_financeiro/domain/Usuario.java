@@ -1,18 +1,16 @@
 package br.com.livroandroid.suporte_financeiro.domain;
 
+import android.os.Parcelable;
+
 import org.parceler.Parcel;
+import org.parceler.ParcelConstructor;
 
 /**
  * Created by Rrafael on 09/10/2016.
  */
-@Parcel
-public class Usuario {
+public class Usuario implements Parcelable {
 
     private String nome;
-
-    public Usuario(String nome) {
-        this.nome = nome;
-    }
 
     public String getNome() {
         return nome;
@@ -44,4 +42,33 @@ public class Usuario {
     public int hashCode() {
         return nome.hashCode();
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(android.os.Parcel dest, int flags) {
+        dest.writeString(this.nome);
+    }
+
+    public Usuario() {
+    }
+
+    protected Usuario(android.os.Parcel in) {
+        this.nome = in.readString();
+    }
+
+    public static final Parcelable.Creator<Usuario> CREATOR = new Parcelable.Creator<Usuario>() {
+        @Override
+        public Usuario createFromParcel(android.os.Parcel source) {
+            return new Usuario(source);
+        }
+
+        @Override
+        public Usuario[] newArray(int size) {
+            return new Usuario[size];
+        }
+    };
 }
