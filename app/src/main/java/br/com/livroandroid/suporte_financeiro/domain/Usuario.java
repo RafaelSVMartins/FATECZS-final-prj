@@ -22,10 +22,6 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public Usuario() {
-
-    }
-
     @Override
     public String toString() {
         return "Usuario{" +
