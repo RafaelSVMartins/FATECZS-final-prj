@@ -23,11 +23,11 @@ public class TabsFinancasAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         if (position == 0) {
-            return context.getString(R.string.Frag1);
+            return context.getString(R.string.CadastrarFinancas);
         } else if (position == 1) {
-            return context.getString(R.string.Frag2);
+            return context.getString(R.string.ExcluirFinancas);
         }
-        return context.getString(R.string.Frag3);
+        return context.getString(R.string.VisualizarFinancas);
     }
 
     @Override

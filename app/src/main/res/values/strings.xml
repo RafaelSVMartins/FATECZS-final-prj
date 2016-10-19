@@ -35,5 +35,21 @@ Versao %s<br><br>
     <string name="ok">OK</string>
     <string name="ListaCarros">Lista Carros</string>
     <string name="SiteLivro">Site Livro</string>
+    <string name="button">Button</string>
+    <string name="CadastrarFinancas">Cadastrar Finanças</string>
+    <string name="ExcluirFinancas">Excluir Financas</string>
+    <string name="VisualizarFinancas">Visualizar Finanças</string>
+    <string name="CadastrarUsuario">Cadastrar Usuário</string>
+    <string name="VisualizarUsuario">Visualizar Usuários</string>
+    <string name="ExcluirUsuario">Excluir Usuário</string>
+    <string name="CadastrarRenda">Cadastro Renda</string>
+    <string name="VisualizarRenda">Visualizar Renda</string>
+    <string name="ExcluirRenda">Excluir Renda</string>
+    <string name="CadastrarInvestimento">Cadastrar Investimento</string>
+    <string name="VisualizarInvestimento">Visualizar Investimento</string>
+    <string name="ExcluirInvestimento">Excluir Investimento</string>
+    <string name="ExcluirDespesa">Excluir Despesa</string>
+    <string name="CadastrarDespesa">Cadastrar Despesas</string>
+    <string name="VisualizarDespesa">Visualizar Despesas</string>
 
 </resources>

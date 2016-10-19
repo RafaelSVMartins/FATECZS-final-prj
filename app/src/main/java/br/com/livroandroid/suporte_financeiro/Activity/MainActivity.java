@@ -16,7 +16,7 @@ public class MainActivity extends Base_Activity {
         super.onCreate(savedInstanceState);
         setToolbar();
         setUpDrawer();
-        replaFragment(new FinancasFragment());
+
 
     }
 

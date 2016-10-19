@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.livroandroid.suporte_financeiro.Fragments.Renda.CadastrarRenda">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
+
+        <TextView
+            android:id="@+id/text_renda_cadastro"
+            android:text="Informe o valor da renda:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="75dp"
+             />
+
+        <EditText
+            android:id="@+id/nome_renda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:layout_below="@+id/text_renda_cadastro"
+            android:layout_alignParentEnd="true"
+            android:text="Informe o nome da renda"/>
+
+        <TextView
+            android:id="@+id/text_valor_renda"
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/nome_renda"
+            android:layout_alignEnd="@+id/text_renda_cadastro" />
+
+        <EditText
+            android:id="@+id/edit_valor_renda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:layout_marginTop="60dp"
+            android:layout_below="@+id/text_valor_renda"
+            android:layout_centerHorizontal="true"
+            android:text="Digite o valor da renda"/>
+
+        <Button
+            android:id="@+id/cadastrar_renda"
+            android:text="Cdastrar Renda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_below="@+id/edit_valor_renda"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</LinearLayout>
