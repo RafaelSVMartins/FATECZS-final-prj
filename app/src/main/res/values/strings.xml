@@ -51,5 +51,9 @@ Versao %s<br><br>
     <string name="ExcluirDespesa">Excluir Despesa</string>
     <string name="CadastrarDespesa">Cadastrar Despesas</string>
     <string name="VisualizarDespesa">Visualizar Despesas</string>
+    <string name="title_activity_despesa_fragment">DespesaActivityFragment</string>
+    <string name="title_activity_investimento_fragment">InvestimentoActivityFragment</string>
+    <string name="title_activity_renda_fragment">RendaActivityFragment</string>
+    <string name="title_activity_usuario_fragment">UsuarioActivityFragment</string>
 
 </resources>

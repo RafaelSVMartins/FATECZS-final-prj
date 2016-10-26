@@ -5,19 +5,19 @@
         <item
             android:id="@+id/frag1"
             android:icon="@drawable/ic_drawer_carro"
-            android:title="Fragment 1" />
+            android:title="Usuários" />
         <item
             android:id="@+id/frag2"
             android:icon="@drawable/ic_drawer_carro"
-            android:title="Fragment 2" />
+            android:title="Rendas" />
         <item
             android:id="@+id/frag3"
             android:icon="@drawable/ic_drawer_carro"
-            android:title="Fragment 3" />
+            android:title="Investimentos" />
         <item
             android:id="@+id/frag4"
             android:icon="@drawable/ic_drawer_carro"
-            android:title="Fragment 4" />
+            android:title="Despesas" />
     </group>
 
     <item android:title="Communicate">

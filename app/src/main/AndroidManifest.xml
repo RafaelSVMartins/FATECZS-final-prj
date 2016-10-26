@@ -11,19 +11,59 @@
         <activity
             android:name=".Activity.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".Activity.Base_Activity">
+            android:parentActivityName=".Activity.Base_Activity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activity.Base_Activity">
-            </meta-data>
+                android:value=".Activity.Base_Activity" />
         </activity>
-        <activity android:name=".Activity.Base_Activity"></activity>
+        <activity android:name=".Activity.Base_Activity" />
+        <activity
+            android:name=".Activity.DespesaActivity.DespesaActivityFragment"
+            android:label="@string/title_activity_despesa_fragment"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".Activity.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.MainActivity"
+                />
+        </activity>
+        <activity
+            android:name=".Activity.InvestimentoActivities.InvestimentoActivityFragment"
+            android:label="@string/title_activity_investimento_fragment"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".Activity.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.MainActivity"
+                />
+            </activity>
+        <activity
+            android:name=".Activity.RendaActivities.RendaActivityFragment"
+            android:label="@string/title_activity_renda_fragment"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".Activity.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.MainActivity"
+                />
+        </activity>
+        <activity
+            android:name=".Activity.UsuarioActivities.UsuarioActivityFragment"
+            android:label="@string/title_activity_usuario_fragment"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".Activity.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.MainActivity"
+                />
+        </activity>
     </application>
 
 </manifest>

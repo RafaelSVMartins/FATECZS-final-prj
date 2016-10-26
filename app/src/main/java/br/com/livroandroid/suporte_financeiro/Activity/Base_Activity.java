@@ -1,5 +1,6 @@
 package br.com.livroandroid.suporte_financeiro.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -15,9 +16,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import br.com.livroandroid.suporte_financeiro.Activity.DespesaActivity.DespesaActivityFragment;
+import br.com.livroandroid.suporte_financeiro.Activity.InvestimentoActivities.InvestimentoActivityFragment;
+import br.com.livroandroid.suporte_financeiro.Activity.RendaActivities.RendaActivityFragment;
+import br.com.livroandroid.suporte_financeiro.Activity.UsuarioActivities.UsuarioActivityFragment;
 import br.com.livroandroid.suporte_financeiro.Fragments.ContatoFinancas;
 import br.com.livroandroid.suporte_financeiro.Fragments.FinancasFragment;
 import br.com.livroandroid.suporte_financeiro.Fragments.FinancasTabsFragments;
+import br.com.livroandroid.suporte_financeiro.Fragments.Renda.TabsRendaFragments;
+import br.com.livroandroid.suporte_financeiro.Fragments.despesa.TabsDespesasFragment;
+import br.com.livroandroid.suporte_financeiro.Fragments.investimentos.TabsInvestimentosFragment;
+import br.com.livroandroid.suporte_financeiro.Fragments.usuarios.TabsUsuariosFragment;
 import br.com.livroandroid.suporte_financeiro.R;
 
 public class Base_Activity extends AppCompatActivity {
@@ -68,13 +77,21 @@ public class Base_Activity extends AppCompatActivity {
                 int id = item.getItemId();
 
                 if (id == R.id.frag1) {
-                    replaFragment(new FinancasTabsFragments());
+                    //replaFragment(new TabsUsuariosFragment());
+                    Intent intent = new Intent(getBaseContext(), UsuarioActivityFragment.class);
+                    startActivity(intent);
                 } else if (id == R.id.frag2) {
-                    replaFragment(new ContatoFinancas());
+                    //replaFragment(new TabsRendaFragments());
+                    Intent intent = new Intent(getBaseContext(), RendaActivityFragment.class);
+                    startActivity(intent);
                 } else if (id == R.id.frag3) {
-                    replaFragment(new ContatoFinancas());
+                    //replaFragment(new TabsInvestimentosFragment());
+                    Intent intent = new Intent(getBaseContext(), InvestimentoActivityFragment.class);
+                    startActivity(intent);
                 } else if (id == R.id.frag4) {
-                    replaFragment(new FinancasFragment());
+                    //replaFragment(new TabsDespesasFragment());
+                    Intent intent = new Intent(getBaseContext(), DespesaActivityFragment.class);
+                    startActivity(intent);
                 }
                 drawer.closeDrawer(GravityCompat.START);
                 return true;
@@ -115,6 +132,6 @@ public class Base_Activity extends AppCompatActivity {
     }
 
     protected void replaFragment(Fragment frag) {
-        getSupportFragmentManager().beginTransaction().replace(R.id.container,frag,"TAG").commit();
+        //getSupportFragmentManager().beginTransaction().replace(R.id.container,frag,"TAG").commit();
     }
 }
