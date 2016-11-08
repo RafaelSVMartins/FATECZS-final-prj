@@ -30,4 +30,5 @@ dependencies {
     compile 'org.parceler:parceler-api:1.1.5'
     testCompile 'junit:junit:4.12'
     provided 'org.parceler:parceler:1.1.5'
+    compile files('libs/SQLiteStudioRemote.jar')
 }

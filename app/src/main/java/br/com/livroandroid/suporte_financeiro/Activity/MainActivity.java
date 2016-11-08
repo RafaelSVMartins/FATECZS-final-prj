@@ -8,6 +8,7 @@ import android.widget.Toast;
 import br.com.livroandroid.suporte_financeiro.Fragments.AboutDialog;
 import br.com.livroandroid.suporte_financeiro.Fragments.FinancasFragment;
 import br.com.livroandroid.suporte_financeiro.R;
+import pl.com.salsoft.sqlitestudioremote.SQLiteStudioService;
 
 public class MainActivity extends Base_Activity {
 
@@ -16,7 +17,7 @@ public class MainActivity extends Base_Activity {
         super.onCreate(savedInstanceState);
         setToolbar();
         setUpDrawer();
-
+        SQLiteStudioService.instance().start(this);
 
     }
 
@@ -36,6 +37,12 @@ public class MainActivity extends Base_Activity {
         }
         return super.onOptionsItemSelected(item);
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        SQLiteStudioService.instance().stop();
+        super.onDestroy();
     }
 }
 

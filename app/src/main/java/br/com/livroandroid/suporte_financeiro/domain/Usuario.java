@@ -1,6 +1,7 @@
 package br.com.livroandroid.suporte_financeiro.domain;
 
 import android.os.Parcelable;
+import android.util.Log;
 
 import org.parceler.Parcel;
 import org.parceler.ParcelConstructor;
@@ -10,7 +11,11 @@ import org.parceler.ParcelConstructor;
  */
 public class Usuario implements Parcelable {
 
+    private Long id;
+
     private String nome;
+
+    private String sexo;
 
     public String getNome() {
         return nome;
@@ -18,6 +23,22 @@ public class Usuario implements Parcelable {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 
     @Override

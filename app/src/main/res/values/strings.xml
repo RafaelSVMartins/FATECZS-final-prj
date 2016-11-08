@@ -56,4 +56,8 @@ Versao %s<br><br>
     <string name="title_activity_renda_fragment">RendaActivityFragment</string>
     <string name="title_activity_usuario_fragment">UsuarioActivityFragment</string>
 
+    <string-array name="Sexo">
+        <item>Masculino</item>
+        <item>Feminino</item>
+    </string-array>
 </resources>
