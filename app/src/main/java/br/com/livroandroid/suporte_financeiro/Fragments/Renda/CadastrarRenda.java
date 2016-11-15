@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import br.com.livroandroid.suporte_financeiro.R;
 
@@ -14,7 +15,9 @@ import br.com.livroandroid.suporte_financeiro.R;
  */
 public class CadastrarRenda extends Fragment {
 
-
+    private EditText NomeRenda;
+    private EditText TipoRenda;
+    private EditText ValorRenda;
     public CadastrarRenda() {
         // Required empty public constructor
     }
@@ -24,7 +27,8 @@ public class CadastrarRenda extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cadastrar_renda, container, false);
+        View view = inflater.inflate(R.layout.fragment_cadastrar_renda, container, false);
+        return view;
     }
 
 }

@@ -44,11 +44,12 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioV
     public void onBindViewHolder(final UsuarioAdapter.UsuarioViewHolder holder, final int position) {
         Usuario usu = usuarios.get(position);
         holder.tNome.setText(usu.getNome());
-        if (usu.getSexo() == "Masculino") {
+        if (usu.getSexo() == "masculino") {
             holder.img.setImageResource(R.drawable.masculino);
-        } else {
-            holder.img.setImageResource(R.drawable.masculino);
+        } else  {
+            holder.img.setImageResource(R.drawable.feminino);
         }
+
 
         if(usuarioOnClickListener != null) {
             holder.itemView.setOnClickListener(new View.OnClickListener() {

@@ -6,6 +6,7 @@ import org.parceler.Parcel;
 import org.parceler.ParcelConstructor;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
 
 /**
  * Created by Rrafael on 09/10/2016.
@@ -15,6 +16,42 @@ public class Investimento implements Parcelable {
 
     private String nomeInvestimento;
     private BigDecimal valorInvestimento;
+    private String tipoInvestimento;
+    private Importancia importancia;
+    private Calendar  vencimentoInvestimento;
+    private Usuario usuario;
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Calendar getVencimentoInvestimento() {
+        return vencimentoInvestimento;
+    }
+
+    public void setVencimentoInvestimento(Calendar vencimentoInvestimento) {
+        this.vencimentoInvestimento = vencimentoInvestimento;
+    }
+
+    public Importancia getImportancia() {
+        return importancia;
+    }
+
+    public void setImportancia(Importancia importancia) {
+        this.importancia = importancia;
+    }
+
+    public String getTipoInvestimento() {
+        return tipoInvestimento;
+    }
+
+    public void setTipoInvestimento(String tipoInvestimento) {
+        this.tipoInvestimento = tipoInvestimento;
+    }
 
     public String getNomeInvestimento() {
         return nomeInvestimento;
@@ -47,17 +84,30 @@ public class Investimento implements Parcelable {
 
         Investimento that = (Investimento) o;
 
-        if (!nomeInvestimento.equals(that.nomeInvestimento)) return false;
-        return valorInvestimento.equals(that.valorInvestimento);
+        if (nomeInvestimento != null ? !nomeInvestimento.equals(that.nomeInvestimento) : that.nomeInvestimento != null)
+            return false;
+        if (valorInvestimento != null ? !valorInvestimento.equals(that.valorInvestimento) : that.valorInvestimento != null)
+            return false;
+        if (tipoInvestimento != null ? !tipoInvestimento.equals(that.tipoInvestimento) : that.tipoInvestimento != null)
+            return false;
+        if (importancia != that.importancia) return false;
+        if (vencimentoInvestimento != null ? !vencimentoInvestimento.equals(that.vencimentoInvestimento) : that.vencimentoInvestimento != null)
+            return false;
+        return usuario != null ? usuario.equals(that.usuario) : that.usuario == null;
 
     }
 
     @Override
     public int hashCode() {
-        int result = nomeInvestimento.hashCode();
-        result = 31 * result + valorInvestimento.hashCode();
+        int result = nomeInvestimento != null ? nomeInvestimento.hashCode() : 0;
+        result = 31 * result + (valorInvestimento != null ? valorInvestimento.hashCode() : 0);
+        result = 31 * result + (tipoInvestimento != null ? tipoInvestimento.hashCode() : 0);
+        result = 31 * result + (importancia != null ? importancia.hashCode() : 0);
+        result = 31 * result + (vencimentoInvestimento != null ? vencimentoInvestimento.hashCode() : 0);
+        result = 31 * result + (usuario != null ? usuario.hashCode() : 0);
         return result;
     }
+
 
     @Override
     public int describeContents() {
@@ -68,6 +118,10 @@ public class Investimento implements Parcelable {
     public void writeToParcel(android.os.Parcel dest, int flags) {
         dest.writeString(this.nomeInvestimento);
         dest.writeSerializable(this.valorInvestimento);
+        dest.writeString(this.tipoInvestimento);
+        dest.writeInt(this.importancia == null ? -1 : this.importancia.ordinal());
+        dest.writeSerializable(this.vencimentoInvestimento);
+        dest.writeParcelable(this.usuario, flags);
     }
 
     public Investimento() {
@@ -76,9 +130,14 @@ public class Investimento implements Parcelable {
     protected Investimento(android.os.Parcel in) {
         this.nomeInvestimento = in.readString();
         this.valorInvestimento = (BigDecimal) in.readSerializable();
+        this.tipoInvestimento = in.readString();
+        int tmpImportancia = in.readInt();
+        this.importancia = tmpImportancia == -1 ? null : Importancia.values()[tmpImportancia];
+        this.vencimentoInvestimento = (Calendar) in.readSerializable();
+        this.usuario = in.readParcelable(Usuario.class.getClassLoader());
     }
 
-    public static final Parcelable.Creator<Investimento> CREATOR = new Parcelable.Creator<Investimento>() {
+    public static final Creator<Investimento> CREATOR = new Creator<Investimento>() {
         @Override
         public Investimento createFromParcel(android.os.Parcel source) {
             return new Investimento(source);

@@ -17,7 +17,15 @@ public class Despesa implements Parcelable {
     private String nomeDespesa;
     private BigDecimal valorDespesa;
     private Calendar DataVencimento;
+    private Usuario usuario;
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 
     public String getNomeDespesa() {
         return nomeDespesa;

@@ -13,8 +13,35 @@ import java.math.BigDecimal;
 
 public class Renda implements Parcelable {
 
+    private Long id;
     private String nomeRenda;
     private BigDecimal valorRenda;
+    private String tipoRenda;
+    private Usuario usuario;
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTipoRenda() {
+        return tipoRenda;
+    }
+
+    public void setTipoRenda(String tipoRenda) {
+        this.tipoRenda = tipoRenda;
+    }
 
     public String getNomeRenda() {
         return nomeRenda;
