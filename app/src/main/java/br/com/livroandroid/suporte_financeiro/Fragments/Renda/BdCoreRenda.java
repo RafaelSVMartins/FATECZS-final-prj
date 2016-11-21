@@ -24,6 +24,7 @@ public class BdCoreRenda  {
     private static final String TAG="sql";
 
     public BdCoreRenda(Context context) {
+
         bancoSuporte = new BancoSuporte(context);
         db = bancoSuporte.getWritableDatabase();
     }
