@@ -10,6 +10,7 @@ import android.view.View;
 import br.com.livroandroid.suporte_financeiro.Activity.Base_Activity;
 import br.com.livroandroid.suporte_financeiro.Fragments.usuarios.TabsUsuariosFragment;
 import br.com.livroandroid.suporte_financeiro.R;
+import br.com.livroandroid.suporte_financeiro.domain.Usuario;
 
 public class UsuarioActivityFragment extends Base_Activity {
 
@@ -23,7 +24,7 @@ public class UsuarioActivityFragment extends Base_Activity {
         if (savedInstanceState == null) {
             TabsUsuariosFragment tabfrag = new TabsUsuariosFragment();
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.UsuarioFraments,tabfrag).commit();
+                    .replace(R.id.content_usuario_activity_fragment,tabfrag).commit();
         }
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -34,5 +35,6 @@ public class UsuarioActivityFragment extends Base_Activity {
             }
         });
     }
+
 
 }

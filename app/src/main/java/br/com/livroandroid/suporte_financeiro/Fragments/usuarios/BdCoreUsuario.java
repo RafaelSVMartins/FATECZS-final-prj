@@ -35,12 +35,15 @@ public class BdCoreUsuario {
             ContentValues values = new ContentValues();
             values.put("nome", usuario.getNome());
             values.put("sexo", usuario.getSexo());
+            values.put("email", usuario.getEmail());
             if (id != 0) {
                 String _id = String.valueOf(usuario.getId());
                 long count = db.update("usuario",values,"_idUsuario = " + _id,null);
+                Log.d(TAG,"atualizado com sucesso!");
                 return count;
             } else {
                 id = db.insert("usuario","",values);
+                Log.d(TAG,"inserido com sucesso!");
                 return id;
             }
         } finally {
@@ -67,6 +70,8 @@ public class BdCoreUsuario {
         }
     }
 
+
+
     private List<Usuario> toList(Cursor c) {
         List<Usuario> usuarios = new ArrayList<>();
         if (c.moveToFirst()) {
@@ -79,5 +84,24 @@ public class BdCoreUsuario {
             } while(c.moveToNext());
         }
         return usuarios;
+    }
+
+    public Usuario FindAllByNome(Usuario usuario) {
+        Usuario u = null;
+        try {
+            //select * from carro where tipo = ?
+            Cursor c = db.query("usuario", new String[] {"_idUsuario","nome","sexo","email"}, "nome=?", new String[]{usuario.getNome()}, null, null, null);
+            if (c.moveToFirst()) {
+                u = new Usuario();
+                u.setId(c.getLong(c.getColumnIndex("_idUsuario")));
+                u.setNome(c.getString(c.getColumnIndex("nome")));
+                u.setSexo(c.getString(c.getColumnIndex("sexo")));
+                u.setEmail(c.getString(c.getColumnIndex("email")));
+                return u;
+            }
+        } finally {
+            db.close();
+        }
+        return u;
     }
 }

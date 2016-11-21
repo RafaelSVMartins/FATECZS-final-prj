@@ -10,7 +10,11 @@ public enum Importancia {
     TRANQUILO("tranquilo");
     private String descricao;
 
-    Importancia(String descricao) {
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    private Importancia(String descricao) {
         this.descricao = descricao;
     }
 

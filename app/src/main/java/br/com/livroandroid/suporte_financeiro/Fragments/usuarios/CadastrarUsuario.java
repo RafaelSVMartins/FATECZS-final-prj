@@ -23,6 +23,7 @@ public class CadastrarUsuario extends Fragment {
     private EditText nomeUsuario;
     private Spinner sexo;
     private Usuario usu;
+    private EditText emailUsuario;
     private Button btncadastrar;
     private BdCoreUsuario bdCoreUsuario;
     private String[] nomesexos;
@@ -40,23 +41,36 @@ public class CadastrarUsuario extends Fragment {
         View view = inflater.inflate(R.layout.fragment_cadastrar_usuario, container, false);
         nomesexos = new String[] {"masculino","feminino"};
         bdCoreUsuario =  new BdCoreUsuario(getContext());
+
         sexo = (Spinner) view.findViewById(R.id.spinner);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item,nomesexos);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item,nomesexos);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sexo.setAdapter(arrayAdapter);
+
+        sexo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                nsexo = String.valueOf(parent.getItemAtPosition(position));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         nomeUsuario = (EditText) view.findViewById(R.id.cadu_nome);
+        emailUsuario = (EditText) view.findViewById(R.id.editTextEmail);
         btncadastrar = (Button) view.findViewById(R.id.button3);
         usu = new Usuario();
-        /*usu.setNome(String.valueOf(nomeUsuario.getText()));
-        usu.setSexo(String.valueOf(sexo.getSelectedItem()));*/
 
         btncadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 nome = nomeUsuario.getText().toString();
-                nsexo = sexo.getSelectedItem().toString();
                 usu.setNome(nome);
                 usu.setSexo(nsexo);
+                usu.setEmail(emailUsuario.getText().toString());
                 if (usu.getNome() != null && usu.getSexo() != null) {
                     UsuarioService.SalvarUsuarios(getContext(),usu);
                 }

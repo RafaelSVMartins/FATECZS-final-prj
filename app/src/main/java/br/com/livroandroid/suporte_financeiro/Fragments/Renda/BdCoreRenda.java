@@ -29,7 +29,7 @@ public class BdCoreRenda  {
         db = bancoSuporte.getWritableDatabase();
     }
 
-    public long save(Usuario usuario, Renda renda) {
+    public long save(Renda renda) {
         long id = 0;
         if (renda.getId() != null) {
             id = renda.getId();
@@ -39,7 +39,7 @@ public class BdCoreRenda  {
             values.put("nome", renda.getNomeRenda());
             values.put("tipo", renda.getTipoRenda());
             values.put("valor", renda.getValorRenda().doubleValue());
-            values.put("usuario_idUsuario", usuario.getId());
+            values.put("usuario_idUsuario", renda.getUsuario().getId());
             if (id != 0) {
                 String _id = String.valueOf(renda.getId());
                 long count = db.update("renda",values,"_idRenda = " + _id,null);
@@ -54,7 +54,7 @@ public class BdCoreRenda  {
 
     }
 
-    public int delete(Usuario usuario, Renda renda) {
+    public int delete(Renda renda) {
         try {
             int count = db.delete("renda","_idRenda=?", new String[]{String.valueOf(renda.getId())});
             Log.i(TAG,"Deletou ["+count+"] registro");
@@ -64,14 +64,6 @@ public class BdCoreRenda  {
         }
     }
 
-    public List<Renda> findAll() {
-        try {
-            Cursor c = db.query("renda",null,null,null,null,null,null,null);
-            return toList(c);
-        } finally {
-            db.close();
-        }
-    }
 
     private List<Renda> toList(Cursor c) {
         List<Renda> rendas = new ArrayList<>();
@@ -82,11 +74,19 @@ public class BdCoreRenda  {
                 renda.setNomeRenda(c.getString(c.getColumnIndex("nome")));
                 renda.setTipoRenda(c.getString(c.getColumnIndex("tipo")));
                 renda.setValorRenda(BigDecimal.valueOf(c.getDouble(c.getColumnIndex("valor"))));
-                renda.setUsuarioId(c.getLong(c.getColumnIndex("_idRenda")));
+                //renda.getUsuario().setId(c.getLong(c.getColumnIndex("usuario_idUsuario")));
                 rendas.add(renda);
             } while(c.moveToNext());
         }
         return rendas;
     }
 
+    public List<Renda> findAll() {
+        try {
+            Cursor c = db.query("renda",null,null,null,null,null,null,null);
+            return toList(c);
+        } finally {
+            db.close();
+        }
+    }
 }

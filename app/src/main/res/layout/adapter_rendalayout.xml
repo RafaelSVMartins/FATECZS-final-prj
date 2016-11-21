@@ -38,6 +38,25 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/RendaUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:textSize="20sp"/>
+        <Button
+            android:id="@+id/deletaRenda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deletar"
+            />
+        <Button
+            android:id="@+id/alteraRenda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alterar"
+            />
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">

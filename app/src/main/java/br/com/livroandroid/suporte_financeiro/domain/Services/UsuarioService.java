@@ -28,6 +28,17 @@ public class UsuarioService  {
         return usuarios;
     }
 
+    public static Usuario getUsuario(Context context, Usuario usuario) throws IOException {
+        BdCoreUsuario bd = new BdCoreUsuario(context);
+        Usuario usu = bd.FindAllByNome(usuario);
+        if(usu != null) {
+            return usu;
+        } else {
+            Log.d(TAG,"O usuário não foi encontrado no banco!");
+        }
+        return usu;
+    }
+
     private static List<Usuario> getFromBanco(Context context) {
         BdCoreUsuario bd = new BdCoreUsuario(context);
         List<Usuario> usuarios=null;

@@ -25,10 +25,10 @@ public class TabsRendaAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         if (position == 0) {
             return context.getString(R.string.CadastrarRenda);
-        } else if (position == 1) {
+        } else {
             return context.getString(R.string.VisualizarRenda);
         }
-        return context.getString(R.string.ExcluirRenda);
+
     }
 
     @Override
@@ -36,16 +36,14 @@ public class TabsRendaAdapter extends FragmentPagerAdapter {
         Fragment f = null;
         if(position == 0) {
             f = new CadastrarRenda();
-        } else  if(position == 1) {
+        } else {
             f = new VisualizarRenda();
-        } else  {
-            f = new ExcluirRenda();
         }
         return f;
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 2;
     }
 }

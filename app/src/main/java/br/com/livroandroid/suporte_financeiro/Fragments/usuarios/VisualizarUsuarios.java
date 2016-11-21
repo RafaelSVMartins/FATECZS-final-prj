@@ -67,6 +67,7 @@ public class VisualizarUsuarios extends Fragment {
 
     private void taskUsuario(boolean pullRefresh) {
         new GetUsuariosTask(pullRefresh).execute();
+
     }
 
     @Override
@@ -105,7 +106,7 @@ public class VisualizarUsuarios extends Fragment {
             super.onPostExecute(usuarios);
             if(usuarios != null) {
                 VisualizarUsuarios.this.usuarios = usuarios;
-                recyclerView.setAdapter(new UsuarioAdapter(usuarios,getContext(),onClickUsuario()));
+                recyclerView.setAdapter(new UsuarioAdapter(usuarios,getContext(),onClickUsuario(), getFragmentManager(), getActivity()));
             }
             if(pull == false) {
                 progressBar.setVisibility(View.GONE);

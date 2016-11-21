@@ -14,10 +14,40 @@ import java.util.Calendar;
 
 public class Despesa implements Parcelable {
 
+    private Long id;
     private String nomeDespesa;
     private BigDecimal valorDespesa;
     private Calendar DataVencimento;
     private Usuario usuario;
+    private Importancia importancia;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Boolean isUrgente() {
+        return Importancia.URGENTE.equals(this.importancia);
+    }
+
+    public Boolean isRelevante() {
+        return Importancia.RELEVANTE.equals(this.importancia);
+    }
+
+    public Boolean isTranquilo() {
+        return Importancia.TRANQUILO.equals(this.importancia);
+    }
+
+    public Importancia getImportancia() {
+        return importancia;
+    }
+
+    public void setImportancia(Importancia importancia) {
+        this.importancia = importancia;
+    }
 
     public Usuario getUsuario() {
         return usuario;

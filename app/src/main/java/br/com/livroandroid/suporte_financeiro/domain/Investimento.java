@@ -14,12 +14,33 @@ import java.util.Calendar;
 
 public class Investimento implements Parcelable {
 
+    private Long id;
     private String nomeInvestimento;
     private BigDecimal valorInvestimento;
     private String tipoInvestimento;
     private Importancia importancia;
     private Calendar  vencimentoInvestimento;
     private Usuario usuario;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Boolean isUrgente() {
+        return Importancia.URGENTE.equals(this.importancia);
+    }
+
+    public Boolean isRelevante() {
+        return Importancia.RELEVANTE.equals(this.importancia);
+    }
+
+    public Boolean isTranquilo() {
+        return Importancia.TRANQUILO.equals(this.importancia);
+    }
 
     public Usuario getUsuario() {
         return usuario;

@@ -9,70 +9,76 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/nome_renda"
-            android:layout_width="match_parent"
+
+        <TextView
+            android:text="Nome da Renda:"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="45dp"
+            android:id="@+id/TextViewNomeRenda"
+            tools:text="Nome da Renda:" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_marginTop="23dp"
+            android:id="@+id/editTextRenda"
+            android:hint="Informe o tipo da Renda:"
+            android:layout_below="@+id/textViewTipo"
+            android:layout_alignStart="@+id/textViewTipo" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
             android:layout_marginTop="26dp"
-            android:layout_below="@+id/text_renda_cadastro"
-            android:layout_alignParentEnd="true"
-            android:hint="Informe o nome da renda."/>
+            android:id="@+id/editTextValor"
+            android:hint="Informe o valor da Renda;"
+            android:layout_below="@+id/textValorRenda"
+            android:layout_alignStart="@+id/textValorRenda" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_marginTop="12dp"
+            android:id="@+id/nome_renda"
+            android:hint="Digite o nome da Renda"
+            android:layout_below="@+id/TextViewNomeRenda"
+            android:layout_alignStart="@+id/TextViewNomeRenda" />
+
+        <TextView
+            android:text="Informe o tipo da renda:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewTipo"
+            android:layout_below="@+id/nome_renda"
+            android:layout_alignStart="@+id/nome_renda"
+            android:layout_marginTop="15dp" />
+
+        <TextView
+            android:text="Informe o valor da Renda:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textValorRenda"
+            android:layout_below="@+id/editTextRenda"
+            android:layout_alignStart="@+id/editTextRenda"
+            android:layout_marginTop="15dp" />
 
         <Button
+            android:text="Cadastrar Renda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/cadastrar_renda"
-            android:text="Cdastrar Renda"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="65dp" />
-
-        <TextView
-            android:id="@+id/text_valor_renda"
-            android:text="Informe o valor da renda:"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_below="@+id/nome_renda"
-            android:layout_alignParentStart="true" />
-
-        <TextView
-            android:id="@+id/text_renda_cadastro"
-            android:text="Informe o nome da renda:"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="75dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
-            android:ems="10"
-            android:layout_below="@+id/text_valor_renda"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="18dp"
-            android:id="@+id/editTextValor" />
-
-        <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
             android:layout_below="@+id/editTextValor"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="22dp"
-            android:id="@+id/textViewTipo" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Informe o tipo da renda"
-            android:ems="10"
-            android:id="@+id/editTextRenda"
-            android:layout_above="@+id/cadastrar_renda"
-            android:layout_alignParentStart="true" />
-
-
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
 </LinearLayout>

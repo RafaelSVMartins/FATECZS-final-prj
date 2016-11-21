@@ -27,10 +27,9 @@ public class TabsUsuarioAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         if (position == 0) {
             return context.getString(R.string.CadastrarUsuario);
-        } else if (position == 1) {
-            return context.getString(R.string.ExcluirUsuario);
+        } else {
+            return context.getString(R.string.VisualizarUsuario);
         }
-        return context.getString(R.string.VisualizarUsuario);
     }
 
     @Override
@@ -38,8 +37,6 @@ public class TabsUsuarioAdapter extends FragmentPagerAdapter {
         Fragment f = null;
         if (position == 0) {
             f = new CadastrarUsuario();
-        } else if (position == 1) {
-            f = new ExcluirUsuario();
         } else {
             f = new VisualizarUsuarios();
         }
@@ -48,6 +45,6 @@ public class TabsUsuarioAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 2;
     }
 }

@@ -1,5 +1,6 @@
 package br.com.livroandroid.suporte_financeiro.Activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -16,6 +17,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.io.IOException;
+
 import br.com.livroandroid.suporte_financeiro.Activity.DespesaActivity.DespesaActivityFragment;
 import br.com.livroandroid.suporte_financeiro.Activity.InvestimentoActivities.InvestimentoActivityFragment;
 import br.com.livroandroid.suporte_financeiro.Activity.RendaActivities.RendaActivityFragment;
@@ -28,15 +31,18 @@ import br.com.livroandroid.suporte_financeiro.Fragments.despesa.TabsDespesasFrag
 import br.com.livroandroid.suporte_financeiro.Fragments.investimentos.TabsInvestimentosFragment;
 import br.com.livroandroid.suporte_financeiro.Fragments.usuarios.TabsUsuariosFragment;
 import br.com.livroandroid.suporte_financeiro.R;
+import br.com.livroandroid.suporte_financeiro.domain.Services.UsuarioService;
+import br.com.livroandroid.suporte_financeiro.domain.Usuario;
 
 public class Base_Activity extends AppCompatActivity {
 
+    protected Context context;
     protected Toolbar toolbar;
     protected DrawerLayout drawer;
     protected NavigationView navigationView;
     protected FloatingActionButton fab;
     protected ActionBarDrawerToggle toggle;
-
+    protected Usuario usuario = new Usuario();
     protected  void setToolbar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar != null) {
@@ -134,4 +140,5 @@ public class Base_Activity extends AppCompatActivity {
     protected void replaFragment(Fragment frag) {
         //getSupportFragmentManager().beginTransaction().replace(R.id.container,frag,"TAG").commit();
     }
+
 }
