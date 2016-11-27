@@ -5,16 +5,16 @@ package br.com.livroandroid.suporte_financeiro.domain;
  */
 
 public enum Importancia {
-    URGENTE("urgente"),
-    RELEVANTE("relevante"),
-    TRANQUILO("tranquilo");
+    URGENTE("URGENTE"),
+    RELEVANTE("RELEVANTE"),
+    TRANQUILO("TRANQUILO");
     private String descricao;
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 
-    private Importancia(String descricao) {
+    Importancia(String descricao) {
         this.descricao = descricao;
     }
 

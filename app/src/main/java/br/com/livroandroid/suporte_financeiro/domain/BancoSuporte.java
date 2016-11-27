@@ -12,7 +12,7 @@ import android.util.Log;
 public class BancoSuporte extends SQLiteOpenHelper {
     private static final String TAG="sql";
     private static final String NOME_BANCO="bdSuporte";
-    private static final int VERSAO_BANCO=3;
+    private static final int VERSAO_BANCO=4;
 
     public BancoSuporte(Context context) {
         super(context, NOME_BANCO, null, VERSAO_BANCO);
@@ -30,6 +30,9 @@ public class BancoSuporte extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("drop table usuario");
+        db.execSQL("drop table renda");
+        db.execSQL("drop table despesa");
+        db.execSQL("drop table investimento");
         onCreate(db);
     }
 }

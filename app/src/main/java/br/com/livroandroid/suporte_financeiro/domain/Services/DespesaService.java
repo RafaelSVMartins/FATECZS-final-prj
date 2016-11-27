@@ -36,7 +36,7 @@ public class DespesaService {
             Log.i(TAG,"Lista de despesas encontradas!");
             return despesas;
         } catch (Exception e) {
-            Log.i(TAG,"Lista de despesas encontradas( "+ e.getMessage() +")!");
+            Log.i(TAG,"Lista de despesas não encontradas( "+ e.getMessage() +")!");
         }
         return despesas;
     }

@@ -83,7 +83,7 @@ public class BdCoreInvestimentos  {
 
     private List<Investimento> toList(Cursor c) {
         List<Investimento> investimentos = new ArrayList<>();
-        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/YYYY", Locale.getDefault());
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
         java.util.Date dt=null;
         long datamili;
         Calendar t = new GregorianCalendar();

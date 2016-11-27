@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import java.math.BigDecimal;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -46,7 +47,7 @@ public class BdCoreDespesas {
             values.put("nome",despesa.getNomeDespesa());
             values.put("valor",despesa.getValorDespesa().doubleValue());
             values.put("dataVencimento",despesa.getDataVencimento().getTimeInMillis());
-            values.put("importancia",despesa.getImportancia().getDescricao());
+            values.put("importancia",despesa.getImportancia());
             values.put("usuario_idUsuario",despesa.getUsuario().getId());
             if (id != 0) {
                 String _id = String.valueOf(despesa.getId());
@@ -84,22 +85,30 @@ public class BdCoreDespesas {
 
     private List<Despesa> toList(Cursor c) {
         List<Despesa> depesas = new ArrayList<>();
-        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/YYYY", Locale.getDefault());
-        Date dt=null;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         long datamili;
-        Calendar t = new GregorianCalendar();
-        if (c.moveToFirst()) do {
-            Despesa d = new Despesa();
-            d.setId(c.getLong(c.getColumnIndex("_idDespesa")));
-            d.setNomeDespesa(c.getString(c.getColumnIndex("nome")));
-            d.setValorDespesa(BigDecimal.valueOf(c.getDouble(c.getColumnIndex("valor"))));
-            datamili = (c.getLong(c.getColumnIndex("dataVencimento")));
-            dt.setTime(datamili);
-            t.setTime(dt);
-            d.setDataVencimento(t);
-            d.setImportancia(Importancia.valueOf(c.getString(c.getColumnIndex("importancia"))));
-            d.getUsuario().setId(c.getLong(c.getColumnIndex("usuario_idUsuario")));
-        } while (c.moveToNext());
-        return null;
+        Calendar t = Calendar.getInstance();
+        if (c.moveToFirst())
+            do {
+                Date dt = null;
+                Despesa d = new Despesa();
+                String formatadata = new String();
+                d.setId(c.getLong(c.getColumnIndex("_idDespesa")));
+                d.setNomeDespesa(c.getString(c.getColumnIndex("nome")));
+                d.setValorDespesa(BigDecimal.valueOf(c.getDouble(c.getColumnIndex("valor"))));
+                datamili = (c.getLong(c.getColumnIndex("dataVencimento")));
+                formatadata = String.valueOf(datamili);
+                try {
+                    dt = (Date) sdf.parse(formatadata);
+                } catch (Exception e) {
+                   throw new RuntimeException("erro na conversão de data: "+e.getMessage()+"");
+                }
+                t.setTime(dt);
+                d.setDataVencimento(t);
+                d.setImportancia(c.getString(c.getColumnIndex("importancia")));
+                //d.getUsuario().setId(c.getLong(c.getColumnIndex("usuario_idUsuario")));
+                depesas.add(d);
+            } while (c.moveToNext());
+        return depesas;
     }
 }

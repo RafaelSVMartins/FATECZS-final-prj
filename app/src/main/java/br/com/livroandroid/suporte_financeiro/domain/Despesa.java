@@ -19,7 +19,7 @@ public class Despesa implements Parcelable {
     private BigDecimal valorDespesa;
     private Calendar DataVencimento;
     private Usuario usuario;
-    private Importancia importancia;
+    private String importancia;
 
     public Long getId() {
         return id;
@@ -41,12 +41,12 @@ public class Despesa implements Parcelable {
         return Importancia.TRANQUILO.equals(this.importancia);
     }
 
-    public Importancia getImportancia() {
+    public String getImportancia() {
         return importancia;
     }
 
-    public void setImportancia(Importancia importancia) {
-        this.importancia = importancia;
+    public void setImportancia(String descricao) {
+        this.importancia = descricao;
     }
 
     public Usuario getUsuario() {

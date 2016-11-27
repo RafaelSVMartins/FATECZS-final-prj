@@ -7,92 +7,62 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
 
-        <TextView
-            android:text="Informe o nome da Despesa:"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textViewDespesa" />
-
-        <TextView
-            android:text="Importancia:"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextValor"
-            android:layout_alignStart="@+id/editTextValor"
-            android:layout_marginTop="35dp"
-            android:id="@+id/textViewImportanciaDespesa" />
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinner2"
-            android:layout_below="@+id/textViewImportanciaDespesa"
-            android:layout_alignParentStart="true" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="date"
-            android:ems="10"
-            android:layout_marginTop="15dp"
-            android:id="@+id/editText4"
-            android:hint="Informe a data de Vencimento:"
-            android:layout_below="@+id/textViewDataDespesa"
-            android:layout_alignStart="@+id/textViewDataDespesa"
-            android:singleLine="true"
-            android:selectAllOnFocus="false" />
-
-        <TextView
-            android:text="Informe a Data de Vencimento:"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textViewDataDespesa"
-            android:layout_below="@+id/spinner2"
-            android:layout_alignStart="@+id/textViewImportanciaDespesa" />
-
-        <TextView
-            android:text="Informe o valor da Despesa:"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:id="@+id/textViewDespesaValor"
-            android:layout_below="@+id/editTextDespesa"
-            android:layout_alignStart="@+id/editTextDespesa" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="12dp"
-            android:id="@+id/editTextDespesa"
-            android:hint="Informe o nome da despesa:"
-            android:layout_below="@+id/textViewDespesa"
-            android:layout_alignParentStart="true" />
 
         <Button
             android:text="Cadastrar Despesas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonDespesa"
-            android:layout_marginTop="14dp"
-            android:layout_below="@+id/editText4"
-            android:layout_toEndOf="@+id/textViewImportanciaDespesa" />
+            android:layout_alignBottom="@+id/editTextDespesa"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/editTextDespesa" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
             android:ems="10"
-            android:layout_marginTop="11dp"
             android:id="@+id/editTextValor"
-            android:hint="Informe o valor da Despesa:"
-            android:layout_below="@+id/textViewDespesaValor"
-            android:layout_alignStart="@+id/textViewDespesaValor" />
+            android:hint="valor da Despesa:"
+            android:layout_below="@+id/buttonDespesa"
+            android:layout_alignParentStart="true" />
 
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editTextDespesa"
+            android:hint="Nome:"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner2"
+            android:layout_below="@+id/editTextValor"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:text="Informe o Vencimento:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewDataVencimento"
+            android:layout_below="@+id/spinner2"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp" />
+
+        <CalendarView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/calendarView"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/textViewDataVencimento"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
 
