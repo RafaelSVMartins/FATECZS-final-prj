@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import br.com.livroandroid.suporte_financeiro.Fragments.despesa.AlterarDespesaDialog;
@@ -21,6 +22,7 @@ import br.com.livroandroid.suporte_financeiro.Fragments.despesa.BdCoreDespesas;
 import br.com.livroandroid.suporte_financeiro.Fragments.despesa.DeletarDespesaDialog;
 import br.com.livroandroid.suporte_financeiro.R;
 import br.com.livroandroid.suporte_financeiro.domain.Despesa;
+import br.com.livroandroid.suporte_financeiro.domain.Usuario;
 
 /**
  * Created by Rrafael on 01/11/2016.
@@ -57,13 +59,14 @@ public class DespesaAdapter extends RecyclerView.Adapter<DespesaAdapter.DespesaV
     @Override
     public void onBindViewHolder(final DespesaAdapter.DespesaViewHolder holder, final int position) {
         final Despesa despesa = despesas.get(position);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
         holder.DespesaNome.setText(despesa.getNomeDespesa());
         holder.DespesaValor.setText(despesa.getValorDespesa().toString());
-        holder.DespesaVencimento.setText(despesa.getDataVencimento().toString());
-        if( despesa.getImportancia() != null){
-            holder.DespesaImportancia.setText(despesa.getImportancia());
-        }
+        holder.DespesaVencimento.setText(sdf.format(despesa.getDataVencimento().getTime()));
+        holder.DespesaImportancia.setText(despesa.getImportancia());
         holder.imgDespesa.setImageResource(R.drawable.despesa);
+
 
         holder.alteradespesa.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +76,10 @@ public class DespesaAdapter extends RecyclerView.Adapter<DespesaAdapter.DespesaV
                     public void onUpdateDespesa(Despesa despesa) {
                         Toast.makeText(holder.itemView.getContext(),"Alterar ["+despesa.getNomeDespesa()+"] despesa.",Toast.LENGTH_SHORT).show();
                         BdCoreDespesas bd = new BdCoreDespesas(holder.itemView.getContext());
+                        Usuario user = new Usuario();
+                        user.setId(2l);
+                        user.setNome("Juan");
+                        despesa.setUsuario(user);
                         bd.save(despesa);
                     }
                 });

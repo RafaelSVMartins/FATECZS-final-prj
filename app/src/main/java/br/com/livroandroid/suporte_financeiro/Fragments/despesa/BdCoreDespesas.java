@@ -66,7 +66,7 @@ public class BdCoreDespesas {
 
     public int Delete(Despesa despesa) {
         try {
-            int id = dbD.delete("despesa","_idDespesa = ",new String[]{String.valueOf(despesa.getId())});
+            int id = dbD.delete("despesa","_idDespesa=?",new String[]{String.valueOf(despesa.getId())});
             Log.i(TAG,"Deletou ["+id+"] registro");
             return id;
         } finally {
@@ -85,24 +85,17 @@ public class BdCoreDespesas {
 
     private List<Despesa> toList(Cursor c) {
         List<Despesa> depesas = new ArrayList<>();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         long datamili;
         Calendar t = Calendar.getInstance();
         if (c.moveToFirst())
             do {
-                Date dt = null;
+                Date dt = new Date();
                 Despesa d = new Despesa();
-                String formatadata = new String();
                 d.setId(c.getLong(c.getColumnIndex("_idDespesa")));
                 d.setNomeDespesa(c.getString(c.getColumnIndex("nome")));
                 d.setValorDespesa(BigDecimal.valueOf(c.getDouble(c.getColumnIndex("valor"))));
-                datamili = (c.getLong(c.getColumnIndex("dataVencimento")));
-                formatadata = String.valueOf(datamili);
-                try {
-                    dt = (Date) sdf.parse(formatadata);
-                } catch (Exception e) {
-                   throw new RuntimeException("erro na conversão de data: "+e.getMessage()+"");
-                }
+                datamili=(c.getLong(c.getColumnIndex("dataVencimento")));
+                dt.setTime(datamili);
                 t.setTime(dt);
                 d.setDataVencimento(t);
                 d.setImportancia(c.getString(c.getColumnIndex("importancia")));

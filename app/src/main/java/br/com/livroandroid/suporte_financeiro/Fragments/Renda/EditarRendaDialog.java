@@ -72,7 +72,11 @@ public class EditarRendaDialog extends DialogFragment {
         btnSalvar = (Button) view.findViewById(R.id.cadastrar_renda);
         this.renda = getArguments().getParcelable("renda");
 
-        btnSalvar.setOnClickListener(new View.OnClickListener() {
+        btnSalvar.setOnClickListener(onClickAtualizar());
+        return view;
+    }
+    private View.OnClickListener onClickAtualizar() {
+        return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String novoNome = NomeRenda.getText().toString();
@@ -80,7 +84,7 @@ public class EditarRendaDialog extends DialogFragment {
                 String novoValor = ValorRenda.getText().toString();
 
                 if (novoNome == null || novoNome.trim().length() ==0) {
-                 NomeRenda.setText("Nome Erro!");
+                    NomeRenda.setText("Nome Erro!");
                 }
 
                 if (novoTipo == null || novoTipo.trim().length() ==0) {
@@ -104,7 +108,6 @@ public class EditarRendaDialog extends DialogFragment {
                 }
                 dismiss();
             }
-        });
-        return view;
+        };
     }
 }

@@ -89,23 +89,25 @@ public class AlterarDespesaDialog extends DialogFragment {
         impotantearray.add("relevante");
         impotantearray.add("urgente");
         this.despesa = getArguments().getParcelable("despesa");
-        return super.onCreateView(inflater, container, savedInstanceState);
+        if(despesa != null) {
+            NomeDespesa.setText(despesa.getNomeDespesa());
+        }
+        btnAlterar.setOnClickListener(onClickAtualizar());
+        return view;
     }
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item,impotantearray);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-        spin.setAdapter(arrayAdapter);
-        btnAlterar.setOnClickListener(new View.OnClickListener() {
+    private View.OnClickListener onClickAtualizar() {
+        return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, impotantearray);
+                arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+                spin.setAdapter(arrayAdapter);
                 spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         valorSelecionado = String.valueOf(parent.getItemAtPosition(position));
-                        Toast.makeText(getContext(),"item selecionado: " + valorSelecionado,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "item selecionado: " + valorSelecionado, Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -120,8 +122,8 @@ public class AlterarDespesaDialog extends DialogFragment {
                 calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
                     @Override
                     public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
-                        data.set(year,month,dayOfMonth);
-                        Toast.makeText(getContext(),"ano:"+year+" mes "+month+" dia"+dayOfMonth+" ",Toast.LENGTH_SHORT).show();
+                        data.set(year, month, dayOfMonth);
+                        Toast.makeText(getContext(), "ano:" + year + " mes " + month + " dia" + dayOfMonth + " ", Toast.LENGTH_SHORT).show();
                     }
                 });
                 String novoNome = NomeDespesa.getText().toString();
@@ -151,13 +153,11 @@ public class AlterarDespesaDialog extends DialogFragment {
                 }
                 despesanova.setNomeDespesa(novoNome);
                 despesanova.setValorDespesa(BigDecimal.valueOf(Double.parseDouble(novoValor)));
-                if(callback != null) {
+                if (callback != null) {
                     callback.onUpdateDespesa(despesanova);
                 }
                 dismiss();
             }
-        });
+        };
     }
-
-
 }

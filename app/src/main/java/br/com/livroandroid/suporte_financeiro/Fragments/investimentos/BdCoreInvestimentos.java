@@ -44,16 +44,16 @@ public class BdCoreInvestimentos  {
             ContentValues values = new ContentValues();
             values.put("nome",investimento.getNomeInvestimento());
             values.put("valor", investimento.getValorInvestimento().doubleValue());
-            values.put("tipo", investimento.getTipoInvestimento());
-            values.put("importancia", investimento.getImportancia().getDescricao());
-            values.put("data", investimento.getVencimentoInvestimento().getTimeInMillis());
+            values.put("vencimento", investimento.getVencimentoInvestimento().getTimeInMillis());
             values.put("usuario_idUsuario", investimento.getUsuario().getId());
             if (id != 0) {
                 String _id = String.valueOf(investimento.getId());
-                long count = db.update("renda",values,"_idRenda = " + _id,null);
+                long count = db.update("investimento",values,"_idInvestimento = " + _id,null);
+                Log.d(TAG,"atualizado com sucesso!");
                 return count;
             } else {
-                id = db.insert("renda","",values);
+                id = db.insert("investimento","",values);
+                Log.d(TAG,"inserido com sucesso!");
                 return id;
             }
         } finally {
@@ -84,22 +84,21 @@ public class BdCoreInvestimentos  {
     private List<Investimento> toList(Cursor c) {
         List<Investimento> investimentos = new ArrayList<>();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
-        java.util.Date dt=null;
         long datamili;
+        java.util.Date dt = new java.util.Date();
         Calendar t = new GregorianCalendar();
         if (c.moveToFirst()) {
             do {
+
                 Investimento investimento = new Investimento();
                 investimento.setId(c.getLong(c.getColumnIndex("_idInvestimento")));
                 investimento.setNomeInvestimento(c.getString(c.getColumnIndex("nome")));
-                investimento.setTipoInvestimento(c.getString(c.getColumnIndex("tipo")));
-                investimento.setImportancia(Importancia.valueOf(c.getString(c.getColumnIndex("importancia"))));
                 investimento.setValorInvestimento(BigDecimal.valueOf(c.getDouble(c.getColumnIndex("valor"))));
                 datamili = (c.getLong(c.getColumnIndex("vencimento")));
                 dt.setTime(datamili);
                 t.setTime(dt);
                 investimento.setVencimentoInvestimento(t);
-                investimento.getUsuario().setId(c.getLong(c.getColumnIndex("usuario_idUsuario")));
+                //investimento.getUsuario().setId(c.getLong(c.getColumnIndex("usuario_idUsuario")));
                 investimentos.add(investimento);
             } while(c.moveToNext());
         }

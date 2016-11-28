@@ -73,6 +73,10 @@ public class RendaAdapter extends RecyclerView.Adapter<RendaAdapter.RendaViewHol
                         public void onClickYes() {
                             Toast.makeText(holder.itemView.getContext(),"Deletando ["+renda.getNomeRenda()+"] usuário.",Toast.LENGTH_SHORT).show();
                             BdCoreRenda db = new BdCoreRenda(activ);
+                            Usuario user = new Usuario();
+                            user.setId(2l);
+                            user.setNome("Juan");
+                            renda.setUsuario(user);
                             db.delete(renda);
                         }
                     });
