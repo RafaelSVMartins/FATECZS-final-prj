@@ -52,5 +52,46 @@
         android:layout_alignStart="@+id/button2"
         android:id="@+id/button5" />
 
+    <TextView
+        android:text="Despesa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/button"
+        android:layout_marginEnd="13dp"
+        android:id="@+id/textViewDespesaButton"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+    <TextView
+        android:text="Rendas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textViewDespesaButton"
+        android:layout_alignStart="@+id/button2"
+        android:layout_marginStart="12dp"
+        android:id="@+id/textViewRendasButton"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:fontFamily="arial" />
+
+    <TextView
+        android:text="Investimentos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:id="@+id/textViewInvButton"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:layout_below="@+id/button4"
+        android:layout_alignEnd="@+id/button4" />
+
+    <TextView
+        android:text="Lista Compras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textViewInvButton"
+        android:layout_alignStart="@+id/textViewRendasButton"
+        android:id="@+id/textViewCompras"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:fontFamily="arial" />
+
 
 </RelativeLayout>
