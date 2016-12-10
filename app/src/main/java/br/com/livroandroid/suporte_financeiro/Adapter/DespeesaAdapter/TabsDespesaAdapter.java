@@ -25,10 +25,9 @@ public class TabsDespesaAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         if (position == 0) {
             return context.getString(R.string.CadastrarDespesa);
-        } else if (position == 1) {
+        } else {
             return context.getString(R.string.VisualizarDespesa);
         }
-        return context.getString(R.string.ExcluirDespesa);
     }
 
     @Override
@@ -36,16 +35,14 @@ public class TabsDespesaAdapter extends FragmentPagerAdapter {
         Fragment f = null;
         if (position == 0) {
             f = new CadastrarDespesa();
-        } else if (position == 1) {
-            f = new VisualizarDespesas();
         } else {
-            f = new ExcluirDespesa();
+            f = new VisualizarDespesas();
         }
         return f;
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 2;
     }
 }

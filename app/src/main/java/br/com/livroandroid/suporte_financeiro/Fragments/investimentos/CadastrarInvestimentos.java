@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import java.math.BigDecimal;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 import br.com.livroandroid.suporte_financeiro.R;
 import br.com.livroandroid.suporte_financeiro.domain.Investimento;
@@ -50,7 +51,8 @@ public class CadastrarInvestimentos extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        calendar = Calendar.getInstance();
+
+        calendar = new GregorianCalendar();
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
@@ -66,6 +68,7 @@ public class CadastrarInvestimentos extends Fragment {
                 investimento.setNomeInvestimento(NomeInvestimento.getText().toString());
                 investimento.setVencimentoInvestimento(calendar);
                 investimento.setValorInvestimento(BigDecimal.valueOf(Double.parseDouble((ValorInvestimento.getText().toString()))));
+
                 Usuario user = new Usuario();
                 user.setId(2l);
                 user.setNome("Juan");

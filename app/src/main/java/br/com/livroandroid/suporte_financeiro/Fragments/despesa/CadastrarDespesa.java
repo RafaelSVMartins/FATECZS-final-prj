@@ -18,6 +18,7 @@ import android.widget.Toast;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import br.com.livroandroid.suporte_financeiro.R;
@@ -73,8 +74,8 @@ public class CadastrarDespesa extends Fragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         importancia.setAdapter(adapter);
 
-
-        data = Calendar.getInstance();
+        data = new GregorianCalendar();
+        despesa.setDataVencimento(data);
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
@@ -111,7 +112,7 @@ public class CadastrarDespesa extends Fragment {
                 if(despimportancia != null) {
                     despesa.setImportancia(despimportancia);
                 }
-                    despesa.setDataVencimento(data);
+
                 Usuario user = new Usuario();
                 user.setId(2l);
                 user.setNome("Juan");

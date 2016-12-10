@@ -28,8 +28,6 @@ public class TabsInvestimentoAdapter extends FragmentPagerAdapter {
             f = new CadastrarInvestimentos();
         } else if (position == 1) {
             f = new VisualizarInvestimentos();
-        } else  {
-            f = new ExcluirInvestimentos();
         }
         return f;
     }
@@ -38,14 +36,13 @@ public class TabsInvestimentoAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         if (position == 0) {
             return context.getString(R.string.CadastrarInvestimento);
-        } else if (position == 1) {
+        } else  {
             return context.getString(R.string.VisualizarInvestimento);
         }
-        return context.getString(R.string.ExcluirInvestimento);
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 2;
     }
 }
