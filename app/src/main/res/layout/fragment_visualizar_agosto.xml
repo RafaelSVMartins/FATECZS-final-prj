@@ -1,0 +1,141 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.livroandroid.suporte_financeiro.Fragments.Relatorio.VisualizarAgosto">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:text="@string/essencial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="48dp"
+        android:id="@+id/textViewEssencialAgosto" />
+
+    <TextView
+        android:text="@string/valor_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textViewQEssencialAgosto"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="102dp"
+        android:id="@+id/textViewVT1Setembro" />
+
+    <TextView
+        android:text="@string/Zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:id="@+id/textViewQuant1Agosto"
+        android:layout_below="@+id/textViewQEssencialAgosto"
+        android:layout_alignEnd="@+id/textViewEssencialAgosto" />
+
+    <TextView
+        android:text="@string/Zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewVT1Agos1"
+        android:layout_above="@+id/textViewImportanteAgosto"
+        android:layout_alignEnd="@+id/textViewVT1Setembro" />
+
+    <TextView
+        android:text="@string/quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:id="@+id/textViewQEssencialAgosto"
+        android:layout_below="@+id/textViewEssencialAgosto"
+        android:layout_alignStart="@+id/textViewEssencialAgosto" />
+
+    <TextView
+        android:text="@string/despesas_importantes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textViewImportanteAgosto"
+        android:layout_below="@+id/textViewQuant1Agosto"
+        android:layout_alignStart="@+id/textViewQEssencialAgosto" />
+
+    <TextView
+        android:text="@string/investimentos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:id="@+id/textViewInvestAgosto"
+        android:layout_below="@+id/textViewQUT"
+        android:layout_alignStart="@+id/textViewImportanteAgosto" />
+
+    <TextView
+        android:text="@string/Zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textViewqtd10Agosto"
+        android:layout_alignStart="@+id/textViewVT10Agosto"
+        android:id="@+id/vT18Agosto" />
+
+    <TextView
+        android:text="@string/quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="63dp"
+        android:id="@+id/textViewQUNTInvestimento"
+        android:layout_below="@+id/textViewInvestAgosto"
+        android:layout_toEndOf="@+id/textViewImportanteAgosto" />
+
+    <TextView
+        android:text="@string/valor_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewVT10Agosto"
+        android:layout_alignBaseline="@+id/textViewQUNTInvestimento"
+        android:layout_alignBottom="@+id/textViewQUNTInvestimento"
+        android:layout_alignStart="@+id/textViewInvestAgosto" />
+
+    <TextView
+        android:text="@string/quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:id="@+id/textViewDesImportanteAgosto"
+        android:layout_below="@+id/textViewImportanteAgosto"
+        android:layout_toEndOf="@+id/textViewQUNTInvestimento" />
+
+    <TextView
+        android:text="@string/valor_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewVT2Agosto"
+        android:layout_above="@+id/textViewQUT"
+        android:layout_toEndOf="@+id/vT18Agosto" />
+
+    <TextView
+        android:text="@string/Zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewVT3Agosto"
+        android:layout_alignBaseline="@+id/textViewQUT"
+        android:layout_alignBottom="@+id/textViewQUT"
+        android:layout_alignEnd="@+id/textViewVT2Agosto" />
+
+    <TextView
+        android:text="@string/Zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewQUT"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/textViewVT1Agos1" />
+
+    <TextView
+        android:text="@string/Zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:id="@+id/textViewqtd10Agosto"
+        android:layout_below="@+id/textViewQUNTInvestimento"
+        android:layout_alignEnd="@+id/textViewQUNTInvestimento"
+        android:layout_marginEnd="17dp" />
+</RelativeLayout>

@@ -1,0 +1,142 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.livroandroid.suporte_financeiro.Fragments.Relatorio.VisualizarNovembro">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:text="@string/essencial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="41dp"
+        android:id="@+id/textViewEssencialNovembro" />
+
+    <TextView
+        android:text="@string/valor_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView4QuantidadeNovembro"
+        android:layout_toEndOf="@+id/textView4QuantidadeNovembro"
+        android:layout_marginStart="77dp"
+        android:id="@+id/textView5VTNovembro" />
+
+    <TextView
+        android:text="@string/quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:id="@+id/textView4QuantidadeNovembro"
+        android:layout_marginStart="14dp"
+        android:layout_below="@+id/textViewEssencialNovembro"
+        android:layout_alignStart="@+id/textViewEssencialNovembro" />
+
+    <TextView
+        android:text="@string/Zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView6QuantidadeNovembro"
+        android:layout_alignEnd="@+id/textView5VTNovembro"
+        android:id="@+id/textView7VTNovembro" />
+
+    <TextView
+        android:text="@string/Zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:id="@+id/textView6QuantidadeNovembro"
+        android:layout_below="@+id/textView4QuantidadeNovembro"
+        android:layout_alignStart="@+id/textView4QuantidadeNovembro" />
+
+    <TextView
+        android:text="@string/despesas_lazer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:id="@+id/textView8LazerNovembro"
+        android:layout_below="@+id/textView6QuantidadeNovembro"
+        android:layout_alignStart="@+id/textViewEssencialNovembro" />
+
+    <TextView
+        android:text="@string/quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView8LazerNovembro"
+        android:layout_alignStart="@+id/textView6QuantidadeNovembro"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView9QuantidadeNovembro" />
+
+    <TextView
+        android:text="@string/valor_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView9QuantidadeNovembro"
+        android:layout_alignStart="@+id/textView5VTNovembro"
+        android:layout_marginStart="19dp"
+        android:id="@+id/textView10ValorTotal" />
+
+    <TextView
+        android:text="@string/Zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView9QuantidadeNovembro"
+        android:layout_alignStart="@+id/textView9QuantidadeNovembro"
+        android:layout_marginTop="18dp"
+        android:id="@+id/textView11QuantidadeNovembro" />
+
+    <TextView
+        android:text="@string/Zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView11QuantidadeNovembro"
+        android:layout_alignStart="@+id/textView10ValorTotal"
+        android:id="@+id/textView12VTNovembro" />
+
+    <TextView
+        android:text="@string/investimentos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView13InvestimentosNovembro"
+        android:layout_below="@+id/textView11QuantidadeNovembro"
+        android:layout_alignStart="@+id/textView11QuantidadeNovembro"
+        android:layout_marginTop="21dp" />
+
+    <TextView
+        android:text="@string/quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView14QuantidNovembro"
+        android:layout_below="@+id/textView13InvestimentosNovembro"
+        android:layout_alignStart="@+id/textView13InvestimentosNovembro" />
+
+    <TextView
+        android:text="@string/valor_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView15VTInvestNovembro"
+        android:layout_alignBaseline="@+id/textView14QuantidNovembro"
+        android:layout_alignBottom="@+id/textView14QuantidNovembro"
+        android:layout_alignStart="@+id/textView12VTNovembro" />
+
+    <TextView
+        android:text="@string/Zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:id="@+id/textView16quantNovembro"
+        android:layout_below="@+id/textView14QuantidNovembro"
+        android:layout_toEndOf="@+id/textViewEssencialNovembro" />
+
+    <TextView
+        android:text="@string/Zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView16quantNovembro"
+        android:layout_alignStart="@+id/textView15VTInvestNovembro"
+        android:id="@+id/textView17VTNovembro" />
+</RelativeLayout>

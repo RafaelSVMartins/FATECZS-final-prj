@@ -85,9 +85,8 @@ public class AlterarDespesaDialog extends DialogFragment {
         NomeDespesa = (EditText) view.findViewById(R.id.editTextDespesa);
         calendarView = (CalendarView) view.findViewById(R.id.calendarView);
         btnAlterar = (Button) view.findViewById(R.id.buttonDespesa);
-        impotantearray.add("tranquilo");
-        impotantearray.add("relevante");
-        impotantearray.add("urgente");
+        impotantearray.add(String.valueOf(Importancia.ESSENCIAL));
+        impotantearray.add(String.valueOf(Importancia.LAZER));
         this.despesa = getArguments().getParcelable("despesa");
         if(despesa != null) {
             NomeDespesa.setText(despesa.getNomeDespesa());

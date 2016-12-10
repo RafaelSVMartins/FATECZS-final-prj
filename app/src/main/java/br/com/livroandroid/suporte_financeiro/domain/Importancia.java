@@ -5,9 +5,8 @@ package br.com.livroandroid.suporte_financeiro.domain;
  */
 
 public enum Importancia {
-    URGENTE("URGENTE"),
-    RELEVANTE("RELEVANTE"),
-    TRANQUILO("TRANQUILO");
+    LAZER("Lazer"),
+    ESSENCIAL("Esssencial");
     private String descricao;
 
     public void setDescricao(String descricao) {

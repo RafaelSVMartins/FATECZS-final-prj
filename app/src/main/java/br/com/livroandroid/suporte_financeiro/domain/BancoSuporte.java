@@ -12,7 +12,7 @@ import android.util.Log;
 public class BancoSuporte extends SQLiteOpenHelper {
     private static final String TAG="sql";
     private static final String NOME_BANCO="bdSuporte";
-    private static final int VERSAO_BANCO=5;
+    private static final int VERSAO_BANCO=6;
 
     public BancoSuporte(Context context) {
         super(context, NOME_BANCO, null, VERSAO_BANCO);
@@ -25,6 +25,7 @@ public class BancoSuporte extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE if not exists renda (_idRenda integer primary key autoincrement,nome text not null, tipo text not null, valor real not null,  usuario_idUsuario integer, foreign key(usuario_idUsuario) references usuario(_idUsuario));");
         db.execSQL("CREATE TABLE if not exists despesa (_idDespesa integer primary key autoincrement, nome text not null, valor real not null, dataVencimento date not null, importancia text, usuario_idUsuario integer, foreign key(usuario_idUsuario) references usuario(_idUsuario));");
         db.execSQL("CREATE TABLE if not exists investimento (_idInvestimento integer primary key autoincrement, nome text not null, valor real not null, vencimento Date not null, usuario_idUsuario integer, foreign key(usuario_idUsuario) references usuario(_idUsuario));");
+        db.execSQL("CREATE TABLE if not exists produto (_idProduto integer primary key autoincrement, nome text not null, quantidade integer not null);");
     }
 
     @Override

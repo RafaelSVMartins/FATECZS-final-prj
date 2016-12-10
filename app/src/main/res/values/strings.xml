@@ -75,4 +75,34 @@ Versao %s<br><br>
         completions."
     </string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_relatorio_anual">RelatorioAnual</string>
+    <string name="situa_o">Situação</string>
+    <string name="despesas">Despesas</string>
+    <string name="quantidade">Quantidade</string>
+    <string name="status">Status</string>
+    <string name="valor">Valor</string>
+    <string name="investimentos">Investimentos</string>
+    <string name="Zero">0</string>
+    <string name="despesas_lazer">Despesas Lazer</string>
+    <string name="valor_total">Valor Total</string>
+    <string name="situacao">Situação</string>
+    <string name="despesas_importantes">Despesas Importantes</string>
+    <string name="Valor_Padrao">0</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="informe_o_nome">Informe o nome</string>
+    <string name="informe_o_valor">Informe o valor</string>
+    <string name="AplicacaoNome">Help Finances</string>
+    <string name="Email_Creator">rafaelviniciusdasilvamartins@gmail.com</string>
+    <string name="nome_do_produto">nome do produto</string>
+    <string name="quantidade_produto">Quantidade Produto</string>
+    <string name="title_activity_visualizar_lista">VisualizarLista</string>
+    <string name="title_activity_relatorio_mensal">RelatorioMensal</string>
+    <string name="dezembro">Dezembro</string>
+    <string name="agosto">Agosto</string>
+    <string name="julho">Julho</string>
+    <string name="junho">Junho</string>
+    <string name="novembro">Novembro</string>
+    <string name="outubro">Outubro</string>
+    <string name="setembro">Setembro</string>
+    <string name="essencial">essencial</string>
 </resources>

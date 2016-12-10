@@ -68,7 +68,24 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activity.MainActivity" />
         </activity>
-        <activity android:name=".Activity.ListaActivity.ListaOperacoes"></activity>
+        <activity
+            android:name=".Activity.ListaActivity.ListaOperacoes"
+            android:parentActivityName=".Activity.Base_Activity" />
+        <activity
+            android:name=".Activity.Relatorios.RelatorioAnual"
+            android:label="@string/title_activity_relatorio_anual"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activity.ListaActivity.CadastrarLista"
+            android:parentActivityName=".Activity.ListaActivity.ListaOperacoes" />
+        <activity
+            android:name=".Activity.ListaActivity.VisualizarLista"
+            android:label="@string/title_activity_visualizar_lista"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activity.Relatorios.RelatorioMensal"
+            android:label="@string/title_activity_relatorio_mensal"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

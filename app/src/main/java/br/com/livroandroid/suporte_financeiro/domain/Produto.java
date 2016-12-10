@@ -1,16 +1,18 @@
 package br.com.livroandroid.suporte_financeiro.domain;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.math.BigDecimal;
 
 /**
  * Created by Rrafael on 03/12/2016.
  */
 
-public class Produto {
+public class Produto implements Parcelable {
     private Long id;
     private String NomeProduto;
-    private String TipoProduto;
-    private BigDecimal ValorProduto;
+    private Long QuantidadeProduto;
 
     public Long getId() {
         return id;
@@ -28,19 +30,53 @@ public class Produto {
         NomeProduto = nomeProduto;
     }
 
-    public String getTipoProduto() {
-        return TipoProduto;
+    public Long getQuantidadeProduto() {
+        return QuantidadeProduto;
     }
 
-    public void setTipoProduto(String tipoProduto) {
-        TipoProduto = tipoProduto;
+    public void setQuantidadeProduto(Long quantidadeProduto) {
+        QuantidadeProduto = quantidadeProduto;
     }
 
-    public BigDecimal getValorProduto() {
-        return ValorProduto;
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "NomeProduto='" + NomeProduto + '\'' +
+                ", QuantidadeProduto=" + QuantidadeProduto +
+                '}';
     }
 
-    public void setValorProduto(BigDecimal valorProduto) {
-        ValorProduto = valorProduto;
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(this.id);
+        dest.writeString(this.NomeProduto);
+        dest.writeValue(this.QuantidadeProduto);
+    }
+
+    public Produto() {
+    }
+
+    protected Produto(Parcel in) {
+        this.id = (Long) in.readValue(Long.class.getClassLoader());
+        this.NomeProduto = in.readString();
+        this.QuantidadeProduto = (Long) in.readValue(Long.class.getClassLoader());
+    }
+
+    public static final Parcelable.Creator<Produto> CREATOR = new Parcelable.Creator<Produto>() {
+        @Override
+        public Produto createFromParcel(Parcel source) {
+            return new Produto(source);
+        }
+
+        @Override
+        public Produto[] newArray(int size) {
+            return new Produto[size];
+        }
+    };
 }

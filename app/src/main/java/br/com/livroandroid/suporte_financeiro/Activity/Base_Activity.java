@@ -21,6 +21,7 @@ import java.io.IOException;
 
 import br.com.livroandroid.suporte_financeiro.Activity.DespesaActivity.DespesaActivityFragment;
 import br.com.livroandroid.suporte_financeiro.Activity.InvestimentoActivities.InvestimentoActivityFragment;
+import br.com.livroandroid.suporte_financeiro.Activity.Relatorios.RelatorioAnual;
 import br.com.livroandroid.suporte_financeiro.Activity.RendaActivities.RendaActivityFragment;
 import br.com.livroandroid.suporte_financeiro.Activity.UsuarioActivities.UsuarioActivityFragment;
 import br.com.livroandroid.suporte_financeiro.Fragments.ContatoFinancas;
@@ -97,6 +98,9 @@ public class Base_Activity extends AppCompatActivity {
                 } else if (id == R.id.frag4) {
                     //replaFragment(new TabsDespesasFragment());
                     Intent intent = new Intent(getBaseContext(), DespesaActivityFragment.class);
+                    startActivity(intent);
+                } else if (id == R.id.relatorio_anual) {
+                    Intent intent = new Intent(getBaseContext(), RelatorioAnual.class);
                     startActivity(intent);
                 }
                 drawer.closeDrawer(GravityCompat.START);

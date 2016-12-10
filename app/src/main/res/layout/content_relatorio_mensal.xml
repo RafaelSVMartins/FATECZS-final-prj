@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_relatorio_mensal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="br.com.livroandroid.suporte_financeiro.Activity.Relatorios.RelatorioMensal"
+    tools:showIn="@layout/activity_relatorio_mensal">
+
+    <FrameLayout
+        android:id="@+id/FragmentoMensal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <Button
+        android:text="@string/julho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:id="@+id/btnJulho"
+        android:layout_below="@+id/btnJunho"
+        android:layout_alignStart="@+id/btnJunho" />
+
+    <Button
+        android:text="@string/junho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:id="@+id/btnJunho"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="@string/novembro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:id="@+id/btnNovembro"
+        android:layout_below="@+id/btnOutubro"
+        android:layout_alignStart="@+id/btnOutubro" />
+
+    <Button
+        android:text="@string/setembro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSetembro"
+        android:layout_below="@+id/btnagosto"
+        android:layout_alignEnd="@+id/btnagosto"
+        android:layout_marginTop="11dp" />
+
+    <Button
+        android:text="@string/agosto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:id="@+id/btnagosto"
+        android:layout_below="@+id/btnJulho"
+        android:layout_alignStart="@+id/btnJulho" />
+
+    <Button
+        android:text="@string/outubro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:id="@+id/btnOutubro"
+        android:layout_below="@+id/btnSetembro"
+        android:layout_alignEnd="@+id/btnSetembro" />
+
+    <Button
+        android:text="@string/dezembro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:id="@+id/btnDezembro"
+        android:layout_below="@+id/btnNovembro"
+        android:layout_alignStart="@+id/btnNovembro" />
+</RelativeLayout>

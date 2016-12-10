@@ -1,0 +1,138 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.livroandroid.suporte_financeiro.Fragments.Relatorio.VisualizarSetembro">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:text="@string/essencial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="35dp"
+        android:id="@+id/textViewEssencialSetembro"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="@string/valor_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textViewQuantSetembro"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="90dp"
+        android:id="@+id/textViewVTSetembro" />
+
+    <TextView
+        android:text="@string/Zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewQuantSetembro"
+        android:layout_alignStart="@+id/textViewQuantSetembro"
+        android:layout_marginTop="25dp"
+        android:id="@+id/textViewquantSetembro" />
+
+    <TextView
+        android:text="@string/quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:id="@+id/textViewQuantSetembro"
+        android:layout_below="@+id/textViewEssencialSetembro"
+        android:layout_alignStart="@+id/textViewEssencialSetembro" />
+
+    <TextView
+        android:text="@string/Zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textViewquantSetembro"
+        android:layout_alignStart="@+id/textViewVTSetembro"
+        android:id="@+id/textViewVT1Setembro" />
+
+    <TextView
+        android:text="@string/despesas_lazer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:id="@+id/textViewLazerSetembro"
+        android:layout_below="@+id/textViewquantSetembro"
+        android:layout_alignStart="@+id/textViewquantSetembro" />
+
+    <TextView
+        android:text="@string/quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:id="@+id/textViewQuantLazerSetembro"
+        android:layout_below="@+id/textViewLazerSetembro"
+        android:layout_toEndOf="@+id/textViewquantSetembro" />
+
+    <TextView
+        android:text="@string/valor_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textViewQuantLazerSetembro"
+        android:layout_alignStart="@+id/textViewVT1Setembro"
+        android:id="@+id/textViewVTLazerAgosto" />
+
+    <TextView
+        android:text="@string/Zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewQyantidadaeSetembro2"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/textViewQuantLazerSetembro" />
+
+    <TextView
+        android:text="@string/Zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textViewQyantidadaeSetembro2"
+        android:layout_alignEnd="@+id/textViewVTLazerAgosto"
+        android:id="@+id/textViewVTSetembro2" />
+
+    <TextView
+        android:text="@string/investimentos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewQyantidadaeSetembro2"
+        android:layout_alignStart="@+id/textViewLazerSetembro"
+        android:layout_marginTop="27dp"
+        android:id="@+id/textViewSetembroInv" />
+
+    <TextView
+        android:text="@string/quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:id="@+id/textView15QuantSetembro"
+        android:layout_below="@+id/textViewSetembroInv"
+        android:layout_alignStart="@+id/textViewQyantidadaeSetembro2" />
+
+    <TextView
+        android:text="@string/valor_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView15QuantSetembro"
+        android:layout_alignEnd="@+id/textViewVTSetembro2"
+        android:id="@+id/textView16VTInvestimentoSetembro" />
+
+    <TextView
+        android:text="@string/Zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView15QuantSetembro"
+        android:layout_alignEnd="@+id/textViewQuantSetembro"
+        android:layout_marginTop="19dp"
+        android:id="@+id/textView17QuantidadeSetembro" />
+
+    <TextView
+        android:text="@string/Zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView17QuantidadeSetembro"
+        android:layout_toEndOf="@+id/textViewVT1Setembro"
+        android:id="@+id/textView18VTInvestimento" />
+</RelativeLayout>

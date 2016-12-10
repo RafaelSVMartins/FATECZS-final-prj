@@ -35,7 +35,6 @@ public class CadastrarDespesa extends Fragment {
     private final List<String> impotantearray = new ArrayList<>();
     private EditText nomeDespesa;
     private EditText valorDecimal;
-    private EditText vencimentoDespesa;
     private CalendarView calendarView;
     private Spinner importancia;
     private String despimportancia;
@@ -59,9 +58,8 @@ public class CadastrarDespesa extends Fragment {
         calendarView = (CalendarView) view.findViewById(R.id.calendarView);
         importancia = (Spinner) view.findViewById(R.id.spinner2);
         btncad = (Button) view.findViewById(R.id.buttonDespesa);
-        impotantearray.add(String.valueOf(Importancia.URGENTE));
-        impotantearray.add(String.valueOf(Importancia.RELEVANTE));
-        impotantearray.add(String.valueOf(Importancia.TRANQUILO));
+        impotantearray.add(String.valueOf(Importancia.LAZER));
+        impotantearray.add(String.valueOf(Importancia.ESSENCIAL));
 
         return view;
     }
@@ -106,7 +104,7 @@ public class CadastrarDespesa extends Fragment {
                 });
                 despimportancia = importancia.getSelectedItem().toString();
                 if(despimportancia == null || despimportancia.equals("")) {
-                    despimportancia = "tranquilo";
+                    despimportancia = "Lazer";
                 }
                 System.out.println("status: "+despimportancia+"");
                 imp = Importancia.valueOf(despimportancia);

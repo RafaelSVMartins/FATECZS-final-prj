@@ -20,16 +20,17 @@
             android:title="Despesas" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Gerar Relatórios">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/relatorio_anual"
+                android:icon="@drawable/ic_drawer_carro"
+                android:title="Relatório Anual" />
+
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/relatorio_mensal"
+                android:icon="@drawable/ic_drawer_carro"
+                android:title="Relatório Mensal" />
         </menu>
     </item>
 

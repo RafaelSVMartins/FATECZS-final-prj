@@ -29,17 +29,14 @@ public class Despesa implements Parcelable {
         this.id = id;
     }
 
-    public Boolean isUrgente() {
-        return Importancia.URGENTE.equals(this.importancia);
+    public Boolean isLazer() {
+        return Importancia.LAZER.equals(this.importancia);
     }
 
-    public Boolean isRelevante() {
-        return Importancia.RELEVANTE.equals(this.importancia);
+    public Boolean isEssencial() {
+        return Importancia.ESSENCIAL.equals(this.importancia);
     }
 
-    public Boolean isTranquilo() {
-        return Importancia.TRANQUILO.equals(this.importancia);
-    }
 
     public String getImportancia() {
         return importancia;

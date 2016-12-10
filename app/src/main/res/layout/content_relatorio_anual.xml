@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_relatorio_anual"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="br.com.livroandroid.suporte_financeiro.Activity.Relatorios.RelatorioAnual"
+    tools:showIn="@layout/activity_relatorio_anual">
+
+    <TextView
+        android:text="@string/situacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textSituacao"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="@string/quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textQuantidade"
+        android:layout_below="@+id/textDespesas"
+        android:layout_alignEnd="@+id/textDespesas"
+        android:layout_marginTop="25dp" />
+
+    <TextView
+        android:text="@string/valor_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textQuantidade"
+        android:layout_alignEnd="@+id/textSituacao"
+        android:id="@+id/textValorTotal" />
+
+    <TextView
+        android:text="@string/Valor_Padrao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textVTotal3"
+        android:layout_alignBaseline="@+id/textVQuantidade"
+        android:layout_alignBottom="@+id/textVQuantidade"
+        android:layout_alignStart="@+id/textSituacao" />
+
+    <TextView
+        android:text="@string/despesas_importantes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:id="@+id/textDespesaImp"
+        android:layout_below="@+id/textVQuantidade"
+        android:layout_toStartOf="@+id/textVTotal2" />
+
+    <TextView
+        android:text="@string/quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textDespesaImp"
+        android:layout_alignStart="@+id/textDespesaImp"
+        android:layout_marginTop="27dp"
+        android:id="@+id/textVImpoQuant" />
+
+    <TextView
+        android:text="@string/valor_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textVImpoQuant"
+        android:layout_toEndOf="@+id/textDespesaImp"
+        android:id="@+id/textViMPTotal" />
+
+    <TextView
+        android:text="@string/despesas_lazer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textDespesas"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignStart="@+id/textDespesaImp" />
+
+    <TextView
+        android:text="@string/investimentos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:id="@+id/textVInvestimentos"
+        android:layout_below="@+id/textVImpoQuant"
+        android:layout_alignStart="@+id/textVImpoQuant" />
+
+    <TextView
+        android:text="@string/Valor_Padrao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textVImpoQuant"
+        android:layout_alignEnd="@+id/textVImpoQuant"
+        android:layout_marginTop="15dp"
+        android:id="@+id/textVImQuant" />
+
+    <TextView
+        android:text="@string/quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/textQuantInv"
+        android:layout_below="@+id/textVInvestimentos"
+        android:layout_alignStart="@+id/textVInvestimentos" />
+
+    <TextView
+        android:text="@string/valor_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textVTotal2"
+        android:layout_alignBaseline="@+id/textQuantInv"
+        android:layout_alignBottom="@+id/textQuantInv"
+        android:layout_alignStart="@+id/textValorTotal" />
+
+    <TextView
+        android:text="@string/Valor_Padrao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textVIm"
+        android:layout_alignBaseline="@+id/textVImQuant"
+        android:layout_alignBottom="@+id/textVImQuant"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="@string/Valor_Padrao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textInvTotal"
+        android:layout_alignBaseline="@+id/textInvQuant"
+        android:layout_alignBottom="@+id/textInvQuant"
+        android:layout_alignEnd="@+id/textVTotal2" />
+
+    <TextView
+        android:text="@string/Valor_Padrao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/textInvQuant"
+        android:layout_below="@+id/textQuantInv"
+        android:layout_alignEnd="@+id/textQuantInv" />
+
+    <ImageView
+        app:srcCompat="@drawable/porco_verde"
+        android:id="@+id/imageView2"
+        android:layout_marginTop="15dp"
+        android:contentDescription="@string/situacao"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/textSituacao"
+        android:layout_alignStart="@+id/textValorTotal" />
+
+    <TextView
+        android:text="@string/Zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:id="@+id/textVQuantidade"
+        android:layout_below="@+id/textQuantidade"
+        android:layout_alignStart="@+id/textQuantidade" />
+
+</RelativeLayout>
